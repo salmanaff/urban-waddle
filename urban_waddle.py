@@ -33,6 +33,7 @@ class FingerprintIndex:
         jobs = []
         for start in range(0, duration_ms, int(interval_ms/2)):
             end = min(start + interval_ms, duration_ms)
+            if start==end: continue
             jobs.append({
                 'audio': audio[start:end],
                 'start': start,
